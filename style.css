@@ -224,6 +224,11 @@ header .container {
     border-bottom-color: var(--accent-color);
 }
 
+.more-projects {
+    text-align: center;
+    margin-top: 50px;
+}
+
 /* About Section */
 .about-section {
     padding: 60px 0;
