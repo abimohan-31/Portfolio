@@ -409,3 +409,64 @@ header .container {
         font-size: 2rem;
     }
 }
+
+/* Contact Form Page Styles */
+.form-page-section {
+    padding: 80px 0;
+    min-height: 60vh;
+    /* Ensure it takes up good screen space */
+    background-color: var(--white);
+    text-align: center;
+}
+
+.form-subtitle {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    color: #666;
+}
+
+.form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--bg-light);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(196, 164, 124, 0.1);
+}
+
+.submit-btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
