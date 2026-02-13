@@ -580,20 +580,17 @@ header .container {
     margin-top: 10px;
 }
 
-/* Navigation Overlay */
+/* Navigation Side-Panel (IDE-Style) */
 .nav-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(26, 42, 58, 0.95);
-    /* matching primary color with transparency */
-    backdrop-filter: blur(10px);
-    z-index: 2000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    /* Transparent backdrop */
+    backdrop-filter: blur(4px);
+    z-index: 3000;
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
@@ -604,41 +601,64 @@ header .container {
     visibility: visible;
 }
 
+.nav-content {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 100%;
+    background: var(--primary-color);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.85, 0, 0.15, 1);
+    z-index: 3001;
+}
+
+.nav-overlay.active .nav-content {
+    transform: translateX(0);
+}
+
 .nav-close {
-    position: absolute;
-    top: 30px;
-    right: 30px;
+    align-self: flex-end;
     color: var(--white);
-    font-size: 3rem;
+    font-size: 2.5rem;
     cursor: pointer;
-    transition: color 0.3s;
+    line-height: 1;
+    margin-bottom: 40px;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .nav-close:hover {
     color: var(--accent-color);
+    transform: rotate(90deg);
 }
 
 .nav-menu ul {
     list-style: none;
-    text-align: center;
+    padding: 0;
 }
 
-.nav-menu ul li {
-    margin: 20px 0;
+.nav-menu li {
+    margin-bottom: 25px;
 }
 
-.nav-menu ul li a {
+.nav-menu li a {
     font-family: var(--font-heading);
     color: var(--white);
-    font-size: 2rem;
-    font-weight: 600;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     transition: color 0.3s, transform 0.3s;
     display: inline-block;
 }
 
-.nav-menu ul li a:hover {
+.nav-menu li a:hover {
     color: var(--accent-color);
-    transform: scale(1.1);
+    transform: translateX(10px);
 }
 
 @media (max-width: 768px) {
